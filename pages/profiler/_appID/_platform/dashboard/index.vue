@@ -9,6 +9,7 @@
 <script>
 export default {
     name: "ProfilerDashboard",
+	layout: 'profiler',
     data() {
         return {};
     },

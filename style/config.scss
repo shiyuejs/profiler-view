@@ -5,49 +5,27 @@ $size-16: 16px;
 $size-18: 18px;
 
 // 颜色配置
-$c-fff: #ffffff;
+$c-bg: #f0f2f5;
+$c-bg-light: #f8f9fb;
+$c-bg-drak: #001529;
+
+$c-fff: #fff;
 $c-f0: #f0f0f0;
 $c-light-grey: #c0c4cc;
-$c-grey: #606266;
-$c-333: #333333;
+$c-grey: #888;
+$c-333: #333;
 $c-222: #20242d;
 $c-black: #000000;
 
-$c-red: #ff4949;
+$c-red: #ff4d4f;
 $c-blue: #5d71ea;
-$c-green: #14ce66;
+$c-green: #52c41a;
 
+$space-5: 5px;
+$space-10: 10px;
+$space-20: 20px;
+$space-24: 24px;
+$space-40: 40px;
 
-// 快捷, 行高1.2倍
-.size-12 {
-    font-size: $size-12;
-    line-height: 14px;
-}
-.size-14 {
-    font-size: $size-14;
-    line-height: 17px;
-}
-.size-16 {
-    font-size: $size-16;
-    line-height: 19px;
-}
-.size-18 {
-    font-size: $size-18;
-    line-height: 22px;
-}
-
-.c-fff {
-    color: $c-fff;
-}
-.c-light-grey {
-    color: $c-light-grey;
-}
-.c-grey {
-    color: $c-grey;
-}
-.c-333 {
-    color: $c-333;
-}
-.c-blue {
-    color: $c-blue;
-}
+$radius-2: 2px;
+$radius-10: 10px;

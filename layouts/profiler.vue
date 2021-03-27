@@ -1,61 +1,71 @@
 <template>
-  <div class="wrapper webkit-box">
-    <Menu />
-    <div class="flex1 webkit-box content-warp">
-      <Header />
-      <div class="pd-15 flex1 active-wrap">
-        <nuxt />
-      </div>
+    <div class="wrapper webkit-box">
+        <Menu :data="menuData" />
+        <div class="flex1 content-warp flex-column">
+            <Header />
+            <div class="flex1 active-wrap">
+                <nuxt />
+                <Footer />
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import Header from "@/components/profiler/common/Header";
-import Menu from "@/components/profiler/common/menu";
+import Menu from "@/components/profiler/common/Menu";
+import Footer from "@/components/profiler/common/Footer";
+
 export default {
-  data() {
-    return {};
-  },
-  computed: {
-    ...mapState({})
-  },
-  components: {
-    Header,
-    Menu
-  },
-  created() {},
-  mounted() {
-    this.init();
-    this.getData();
-  },
-  methods: {
-    init() {},
-
-    // 获取字典
-    async getData() {
-      try {
-        let res = await this.$http("/v1/get_data", {}, { tipError: false });
-        this.setValue("dictionary", this.mergeFilterField(res), true);
-      } catch (err) {}
+    data() {
+        return {
+            menuData: ["QQ", "TAPD", "TM"],
+        };
     },
+    computed: {
+        ...mapState({}),
+    },
+    components: {
+        Header,
+        Menu,
+        Footer,
+    },
+    created() {},
+    mounted() {
+        this.init();
+        this.getData();
+    },
+    methods: {
+        init() {},
 
-    /**
-     * @description 快捷设置store/state
-     * @param {String} key 支持多级用.表示
-     * @param {*} value 给属性设置的值
-     * @param {Boolean} scoped 是否跟state属性, 默认false
-     */
-    setValue(key, value, scoped) {
-      if (!key) return;
-      key = scoped ? key : `reviews.${key}`;
-      this.$store.commit("setValue", {
-        key: key,
-        value: value
-      });
-    }
-  }
+        // 获取字典
+        async getData() {
+            try {
+                let res = await this.$http(
+                    "/v1/get_data",
+                    {},
+                    { tipError: false }
+                );
+                this.setValue("dictionary", this.mergeFilterField(res), true);
+            } catch (err) {}
+        },
+
+        /**
+         * @description 快捷设置store/state
+         * @param {String} key 支持多级用.表示
+         * @param {*} value 给属性设置的值
+         * @param {Boolean} scoped 是否跟state属性, 默认false
+         */
+        setValue(key, value, scoped) {
+            if (!key) return;
+            key = scoped ? key : `reviews.${key}`;
+            this.$store.commit("setValue", {
+                key: key,
+                value: value,
+            });
+        },
+    },
 };
 </script>
 
@@ -64,21 +74,14 @@ export default {
 @import "@/style/common.scss";
 @import "@/style/config.scss";
 @import "@/style/sidebar.scss";
-.review-wrapper {
-  background: $c-f0;
-  min-width: 1200px;
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    background: $c-bg;
 
-  .content-warp {
-    flex-flow: column;
-    overflow-x: hidden;
-  }
-
-  .active-wrap {
-    overflow-y: auto;
-  }
-}
-
-.pd-15 {
-  padding: 0 15px;
+    .active-wrap {
+        overflow-y: auto;
+        padding: $space-24;
+    }
 }
 </style>

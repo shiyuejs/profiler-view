@@ -1,0 +1,14 @@
+@import "@/style/config.scss";
+
+@keyframes loading {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.loading {
+	animation: loading 0.5s linear 0s infinite;
+}
