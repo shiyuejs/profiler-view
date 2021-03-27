@@ -1,0 +1,283 @@
+/*
+  此文件用于定义公共覆盖element-ui样式
+*/
+$buttonNor: #647AFF;
+$buttonNorActive: #7F90FF;
+$buttonNorDisabled: #A2B0FF;
+$buttonDeft: #ffffff;
+$buttonDeftBdColor: #DCDFE6;
+$buttonDeftColor: #606266;
+$buttonDeftActiveBdColor: #C7CEFF;
+$buttonDeftDisabledBdColor: #EBEEF5;
+$buttonDeftDisabledColor: #C0C4CC;
+
+// Button 按钮
+#__layout {
+  .el-button--primary {
+    background: $buttonNor;
+    border-color: $buttonNor;
+
+    &:hover {
+      background: $buttonNorActive;
+      border-color: $buttonNorActive;
+    }
+
+    &:focus {
+      background: $buttonNorActive;
+      border-color: $buttonNorActive;
+    }
+
+    &:active {
+      background: $buttonNorActive;
+      border-color: $buttonNorActive;
+    }
+
+    &.is-disabled {
+      background: $buttonNorDisabled;
+      border-color: $buttonNorDisabled;
+
+      &:hover {
+        background: $buttonNorDisabled;
+        border-color: $buttonNorDisabled;
+      }
+
+      &:focus {
+        background: $buttonNorDisabled;
+        border-color: $buttonNorDisabled;
+      }
+
+      &:active {
+        background: $buttonNorDisabled;
+        border-color: $buttonNorDisabled;
+      }
+    }
+  }
+
+  .el-button--default {
+    background: $buttonDeft;
+    border-color: $buttonDeftBdColor;
+    color: $buttonDeftColor;
+
+    &:hover {
+      background: $buttonDeft;
+      border-color: $buttonDeftActiveBdColor;
+      color: $buttonNor;
+    }
+
+    &:focus {
+      background: $buttonDeft;
+      border-color: $buttonDeftActiveBdColor;
+      color: $buttonNor;
+    }
+
+    &:active {
+      background: $buttonDeft;
+      border-color: $buttonDeftActiveBdColor;
+      color: $buttonNor;
+    }
+
+    &.is-disabled {
+      background: $buttonDeft;
+      border-color: $buttonDeftDisabledBdColor;
+      color: $buttonDeftDisabledColor;
+
+      &:hover {
+        background: $buttonDeft;
+        border-color: $buttonDeftDisabledBdColor;
+        color: $buttonDeftDisabledColor;
+      }
+
+      &:focus {
+        background: $buttonDeft;
+        border-color: $buttonDeftDisabledBdColor;
+        color: $buttonDeftDisabledColor;
+      }
+
+      &:active {
+        background: $buttonDeft;
+        border-color: $buttonDeftDisabledBdColor;
+        color: $buttonDeftDisabledColor;
+      }
+    }
+  }
+
+  .el-button--text {
+    color: $buttonNor;
+
+    &:hover {
+      color: $buttonNorActive;
+    }
+
+    &:focus {
+      color: $buttonNorActive;
+    }
+
+    &:active {
+      color: $buttonNorActive;
+    }
+
+    &.is-disabled {
+      color: $buttonNorDisabled;
+
+      &:hover {
+        color: $buttonNorDisabled;
+      }
+
+      &:focus {
+        color: $buttonNorDisabled;
+      }
+
+      &:active {
+        color: $buttonNorDisabled;
+      }
+    }
+  }
+
+  // Form 表单
+  .el-form-item .el-input__inner {
+    &:focus {
+      border-color: $buttonNor;
+    }
+  }
+
+  // NavMenu 导航菜单
+  .el-menu--collapse {
+    &>.el-menu-item {
+      height: 60px;
+      padding: 10px 0 !important;
+
+      i {
+        display: block;
+        margin: 0 auto 6px !important;
+      }
+
+      span {
+        height: 18px;
+        width: 100%;
+        font-size: 13px;
+        line-height: 18px;
+        display: block;
+        overflow: visible;
+        visibility: visible;
+        text-align: center;
+      }
+    }
+  }
+
+  .el-menu-item {
+    &:focus {
+      background: #5D71EA;
+    }
+
+    &:hover {
+      background: #5D71EA;
+    }
+  }
+
+  .el-menu-item {
+    &.is-active {
+      background-color: #5D71EA !important;
+    }
+  }
+
+  // Dialog 对话框
+  .el-dialog__body {
+    padding-top: 0 !important;
+  }
+
+  // Table 表格
+  .el-table {
+    .table-head {
+      background: #F5F7FA;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(48, 49, 51, 1);
+    }
+  }
+
+  // Steps 步骤条
+  .el-step__head.is-finish {
+    color: $buttonNor;
+    border-color: $buttonNor;
+  }
+
+  .el-step__title {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 8px;
+  }
+
+  .el-step__title.is-finish {
+    color: #303133;
+  }
+
+  .el-step__title.is-process {
+    color: #303133;
+    font-weight: 400;
+  }
+
+  .el-step__head.is-process {
+    color: $buttonNor;
+    border-color: $buttonNor;
+  }
+
+  .el-step__head.is-success {
+    color: $buttonNor;
+    border-color: $buttonNor;
+  }
+
+  .el-step__title.is-success {
+    color: #303133;
+  }
+
+
+  // Radio 单选框
+  .el-radio__input.is-checked .el-radio__inner {
+    border-color: $buttonNor;
+    background: $buttonNor;
+  }
+
+  .el-radio__input.is-checked+.el-radio__label {
+    color: #303133;
+  }
+
+  .el-radio__inner:hover {
+    border-color: $buttonNor;
+  }
+
+  // Checkbox 多选框
+  .el-checkbox__input.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: $buttonNor;
+    border-color: $buttonNor;
+  }
+
+  .el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #303133;
+  }
+
+  .el-checkbox__inner:hover {
+    border-color: $buttonNor;
+  }
+
+  // Tabs 标签页
+  .el-tabs__item {
+    &.is-active {
+      color: $buttonNor;
+    }
+
+    &:hover {
+      color: $buttonNor;
+    }
+  }
+
+  .el-tabs__active-bar {
+    background-color: $buttonNor;
+  }
+
+  // Input 输入框
+  .el-input.is-active .el-input__inner,
+  .el-input__inner:focus {
+    border-color: $buttonNor;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "profiler_view",
+      "script": "npm",
+      "args": "start",
+      "max_memory_restart": "200M",
+      "out_file": "/data/logs/profiler_view/out.log",
+      "error_file": "/data/logs/profiler_view/error.log",
+      "log_file": "/data/logs/profiler_view/log.log",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "instances": 4,
+      "exec_mode": "cluster"
+    }
+  ]
+}
