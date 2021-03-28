@@ -10,7 +10,7 @@
                     type="dashboard"
                     :width="50"
                     :percentage="93"
-					color="#ff4d4f"
+                    color="#ff4d4f"
                 ></el-progress>
             </div>
             <div class="ratio-box flex-column m-r-20">
@@ -20,7 +20,7 @@
                     type="dashboard"
                     :width="50"
                     :percentage="75"
-					color="#e6a23c"
+                    color="#e6a23c"
                 ></el-progress>
             </div>
             <div class="ratio-box flex-column m-r-20">
@@ -32,14 +32,14 @@
                     :percentage="45"
                 ></el-progress>
             </div>
-			<div class="ratio-box flex-column m-r-20">
+            <div class="ratio-box flex-column m-r-20">
                 <div class="title webkit-box flex-center m-b-10">月环比</div>
                 <el-progress
                     class="value"
                     type="dashboard"
                     :width="50"
                     :percentage="25"
-					color="#52c41a"
+                    color="#52c41a"
                 ></el-progress>
             </div>
         </div>
@@ -47,8 +47,8 @@
         <div class="row webkit-box">
             <Card title="实时内存" class="m-r-20 flex1">
                 <div slot="right" class="webkit-box flex-right">
-					<Btn class="m-r-10">按小时</Btn>
-					<Btn class="m-r-10" type="success">按分钟</Btn>
+                    <Btn class="m-r-10">按小时</Btn>
+                    <Btn class="m-r-10" type="success">按分钟</Btn>
                     <IconButton textTip="提示文字" iconName="help" />
                 </div>
                 <div id="container"></div>
@@ -100,12 +100,23 @@
         </div>
 
         <div class="row webkit-box">
-            <Card
-                title="内存情况"
-                iconTextTip="提示文字"
-                iconName="help"
-                class="flex1"
-            >
+            <Card title="内存情况" class="flex1">
+                <div slot="right" class="webkit-box flex-right">
+                    <Btn class="m-r-10" type="success">按天</Btn>
+                    <Btn class="m-r-20">按小时</Btn>
+                    <el-date-picker
+                        size="mini"
+                        v-model="value"
+                        type="daterange"
+                        start-placeholder="开始日期"
+                        end-placeholder="结束日期"
+                        :default-time="['00:00:00', '23:59:59']"
+                        class="m-r-20 ui-date-picker"
+                    >
+                    </el-date-picker>
+                    <IconButton textTip="提示文字" iconName="help" />
+                </div>
+                {{ value }}
             </Card>
         </div>
     </div>
@@ -120,6 +131,7 @@ export default {
     data() {
         return {
             snapshotRankingLoading: false,
+            value: "",
         };
     },
     computed: {
@@ -512,7 +524,7 @@ export default {
             console.log("onReloadSnapshotRanking");
             await this.$utils.sleep(2000);
             this.snapshotRankingLoading = false;
-        }
+        },
     },
 };
 </script>
@@ -555,6 +567,10 @@ export default {
             font-size: $size-14;
             border-radius: 100%;
         }
+    }
+
+    .ui-date-picker {
+        width: 240px;
     }
 }
 </style>

@@ -17,7 +17,7 @@
             >
             </IconButton>
             <IconButton class="link-bg" @click="onToUser">
-                <Avatar class="m-r-5"/> Front Team
+                <Avatar class="m-r-5"/> Tencent.com
             </IconButton>
         </div>
     </div>

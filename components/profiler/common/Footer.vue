@@ -1,7 +1,6 @@
 <template>
     <div class="footer-box">
-        <div class="text-center project-name">Profiler View App</div>
-        <div class="webkit-box flex-center">Front Team</div>
+        <div class="text-center project-name">Profiler View / Tencent.com</div>
     </div>
 </template>
 
