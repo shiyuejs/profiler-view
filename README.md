@@ -56,40 +56,9 @@ $ nginx -t # 检查语法
 $ nginx -s reload # 重启
 ```
 
-## nuxt.js 文档
+## 文档
 - [Nuxt.js docs](https://nuxtjs.org)
 - [github nuxt.js](https://github.com/nuxt/nuxt.js)
-- [中文文档](https://zh.nuxtjs.org/guide/directory-structure)
-
-> [element自定义主题](https://element.eleme.cn/#/zh-CN/theme)
-- 安装elementui的自定义主题工具
-
-```
-//首先安装主题工具
-npm i element-theme -g
-
-//然后安装chalk主题
-npm i element-theme-chalk -D
-```
-
-- 初始化变量文件
-
-```
-et -i [可以自定义变量文件，默认为element-variables.scss]
-```
-
-- 修改变量
-
-直接编辑 element-variables.scss 文件，例如修改主题色为自己所需要的颜色（如： profiler（#647aff））
-
-```
-$--color-primary: #647aff;
-```
-
-- 编译主题
-
-```
-et
-```
-
-编译完之后会在根目录生成theme的文件夹,我们只需要引入theme/index.css即可
+- [Nuxt.js 中文文档](https://zh.nuxtjs.org/guide/directory-structure)
+- [element主题](https://element.eleme.cn/#/zh-CN/theme)
+- [g2plot.antv图表](https://g2plot.antv.vision/zh/examples/area/basic#basic-annotation)

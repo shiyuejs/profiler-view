@@ -37,6 +37,6 @@
     height: 100%;
     fill: currentColor;
     overflow: hidden;
-    vertical-align: -0.15em;
+    /* vertical-align: -0.15em; */
   }
 </style>

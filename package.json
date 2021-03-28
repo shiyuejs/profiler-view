@@ -41,6 +41,7 @@
     "node-sass": "4.13.0",
     "nodemon": "1.19.4",
     "sass-loader": "8.0.0",
-    "svg-sprite-loader": "^4.1.6"
+    "svg-sprite-loader": "^4.1.6",
+	"@antv/g2plot": "^2.3.17"
   }
 }

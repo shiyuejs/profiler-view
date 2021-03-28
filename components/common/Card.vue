@@ -3,7 +3,7 @@
         <div class="card-head webkit-box">
             <div class="title flex1 webkit-box flex-left">
                 <template v-if="title">
-                    <span class="rel webkit-box">
+                    <span class="rel webkit-box flex-left">
                         {{ title }}
                         <IconButton
                             class="m-l-5"

@@ -16,7 +16,7 @@
                 :supNumber="10"
             >
             </IconButton>
-            <IconButton class="link-bg" @click="onToHelp">
+            <IconButton class="link-bg" @click="onToUser">
                 <Avatar class="m-r-5"/> Front Team
             </IconButton>
         </div>
@@ -36,6 +36,11 @@ export default {
         onToHelp() {
             console.log("onToHelp");
         },
+		onToUser() {
+			this.$router.push(
+                `/app/list`
+            );
+		}
     },
 };
 </script>

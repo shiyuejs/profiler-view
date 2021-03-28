@@ -12,6 +12,10 @@
                 {{ item.name }}
             </li>
         </ul>
+
+        <div class="item add-app webkit-box flex-center" @click="onAppCreate">
+            <span class="el-icon-plus"></span>
+        </div>
     </div>
 </template>
 
@@ -30,20 +34,26 @@ export default {
         },
     },
     data() {
-        return {
-		};
+        return {};
     },
     created() {},
     mounted() {},
     computed: {
         appID() {
             return this.$route.params.appID;
-        }
+        },
     },
     methods: {
         onMenu(item, index) {
-			this.$router.push(`/profiler/${item.key}/${item.platform}/dashboard`);
+            this.$router.push(
+                `/profiler/${item.key}/${item.platform}/dashboard`
+            );
         },
+		onAppCreate() {
+			this.$router.push(
+                `/app/create`
+            );
+		}
     },
 };
 </script>
@@ -58,13 +68,21 @@ export default {
     .item {
         cursor: pointer;
         height: 44px;
-		transition: all .5s;
+        transition: all 0.5s;
         &.on {
-            background: #52c41a;
+            background: $c-green;
         }
         &:not(.on):hover {
-            background: #41a70e;
+            background: $c-green-drak;
         }
     }
+
+	.add-app {
+		margin-top: $space-20;
+		font-size: $size-16;
+		&:hover {
+            background: $c-blue!important;
+        }
+	}
 }
 </style>

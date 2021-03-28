@@ -20,27 +20,13 @@ import Footer from "@/components/profiler/common/Footer";
 export default {
     data() {
         return {
-            menuData: [
-				{
-					key: 'QQ_12345',
-					name: 'QQ',
-					platform: 'electron'
-				},
-				{
-					key: 'TAPD_12345',
-					name: 'TAPD',
-					platform: 'node'
-				},
-				{
-					key: 'TM_12345',
-					name: 'TM',
-					platform: 'web'
-				}
-			],
+            
         };
     },
     computed: {
-        ...mapState({}),
+        ...mapState({
+			menuData: state => state.menuData
+		}),
     },
     components: {
         Header,
