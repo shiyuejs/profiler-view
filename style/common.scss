@@ -38,6 +38,10 @@
 	padding: $space-24;
 }
 
+.pointer {
+	cursor: pointer;
+}
+
 /************** margin ************/
 .m-t-20 {
 	margin-top: $space-20;
@@ -137,6 +141,14 @@
     transition: all .5s;
 	&:hover {
 		background: $c-bg-light;
+	}
+}
+.link-color {
+	cursor: pointer;
+    transition: all .5s;
+	color: $c-grey;
+	&:hover {
+		color: $c-333;
 	}
 }
 

@@ -1,23 +1,34 @@
 <template>
     <div class="monitor-box">
-        <div class="row webkit-box m-b-20">
+        <div class="row webkit-box m-b-20 ratio-row">
             <div class="ratio-box flex-column m-r-20">
                 <div class="title webkit-box flex-center m-b-10">
                     内存堆占用比
                 </div>
-                <div class="value webkit-box flex-center">80%</div>
+                <el-progress
+                    class="value"
+                    type="circle"
+					:width="50"
+                    :percentage="93"
+                ></el-progress>
             </div>
-			<div class="ratio-box flex-column m-r-20">
-                <div class="title webkit-box flex-center m-b-10">
-                    日环比
-                </div>
-                <div class="value webkit-box flex-center">80%</div>
+            <div class="ratio-box flex-column m-r-20">
+                <div class="title webkit-box flex-center m-b-10">日环比</div>
+                <el-progress
+                    class="value"
+                    type="circle"
+					:width="50"
+                    :percentage="25"
+                ></el-progress>
             </div>
-			<div class="ratio-box flex-column m-r-20">
-                <div class="title webkit-box flex-center m-b-10">
-                    周环比
-                </div>
-                <div class="value webkit-box flex-center">80%</div>
+            <div class="ratio-box flex-column m-r-20">
+                <div class="title webkit-box flex-center m-b-10">周环比</div>
+                <el-progress
+                    class="value"
+                    type="circle"
+					:width="50"
+                    :percentage="25"
+                ></el-progress>
             </div>
         </div>
 
@@ -39,9 +50,26 @@
                 :reloadLoading="snapshotRankingLoading"
                 @reload="onReloadSnapshotRanking"
             >
-                <Row leftText="20.01.01-22:22:22-9527.heapSnapshot" />
-                <Row leftText="20.01.01-22:22:22-9527.heapSnapshot" />
-                <Row leftText="20.01.01-22:22:22-9527.heapSnapshot" />
+                <Row
+                    class="pointer"
+                    leftText="20.01.01-22:22:22-9527.heapSnapshot"
+                />
+                <Row
+                    class="pointer"
+                    leftText="20.01.01-22:22:22-9527.heapSnapshot"
+                />
+                <Row
+                    class="pointer"
+                    leftText="20.01.01-22:22:22-9527.heapSnapshot"
+                />
+                <Row
+                    class="pointer"
+                    leftText="20.01.01-22:22:22-9527.heapSnapshot"
+                />
+                <Row
+                    class="pointer"
+                    leftText="20.01.01-22:22:22-9527.heapSnapshot"
+                />
             </Card>
         </div>
 
@@ -100,6 +128,10 @@ export default {
         min-width: 260px;
     }
 
+	.ratio-row {
+		padding: 0 $space-24;
+	}
+
     /deep/.icon-button {
         padding: 0;
     }
@@ -119,15 +151,12 @@ export default {
     }
 
     .ratio-box {
-		align-items: center;
+        align-items: center;
         .title {
             font-size: $size-14;
         }
         .value {
             font-size: $size-14;
-            height: 50px;
-            width: 50px;
-            background: #ccc;
             border-radius: 100%;
         }
     }

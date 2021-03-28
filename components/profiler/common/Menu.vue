@@ -4,12 +4,12 @@
         <ul class="list m-t-20">
             <li
                 class="item webkit-box flex-center"
-                :class="{ on: index === currentIndex }"
+                :class="{ on: item.key === appID }"
                 @click="onMenu(item, index)"
                 v-for="(item, index) in data"
                 :key="index"
             >
-                {{ item }}
+                {{ item.name }}
             </li>
         </ul>
     </div>
@@ -31,16 +31,18 @@ export default {
     },
     data() {
         return {
-			currentIndex: -1
 		};
     },
     created() {},
     mounted() {},
-    computed: {},
+    computed: {
+        appID() {
+            return this.$route.params.appID;
+        }
+    },
     methods: {
         onMenu(item, index) {
-			this.currentIndex = index
-            console.log(item);
+			this.$router.push(`/profiler/${item.key}/${item.platform}/dashboard`);
         },
     },
 };

@@ -16,7 +16,7 @@ export default {
     methods: {
         onLogin() {
             this.$message.success("登录成功");
-            this.$router.push("/profiler/UGit12345/electron/dashboard");
+            this.$router.push("/profiler/QQ_12345/electron/dashboard");
         },
         submit(formName) {
             this.$refs[formName].validate(async (valid) => {

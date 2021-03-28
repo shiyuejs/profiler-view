@@ -1,7 +1,11 @@
 <template>
-    <div class="row-box webkit-box">
-        <div class="left-text flex1">{{ leftText }}</div>
-        <div class="right-text">{{ rightText }}</div>
+    <div class="row-box webkit-box" @click="onRow">
+        <div class="left-text webkit-box flex-left flex1">
+            <slot name="left">{{ leftText }}</slot>
+        </div>
+        <div class="right-text webkit-box flex-right">
+            <slot name="right">{{ rightText }}</slot>
+        </div>
     </div>
 </template>
 
@@ -26,19 +30,23 @@ export default {
     mounted() {},
     watch: {},
     computed: {},
-    methods: {},
+    methods: {
+		onRow() {
+			this.$emit('onRow')
+		}
+	},
 };
 </script>
 
 <style lang='scss' scoped>
 @import "@/style/config.scss";
 .row-box {
-	padding: $space-5 0;
-	.left-text {
-		color: $c-333;
-	}
-	.right-text {
-		color: $c-grey;
-	}
+    padding: $space-10 0;
+    .left-text {
+        color: $c-333;
+    }
+    .right-text {
+        color: $c-grey;
+    }
 }
 </style>

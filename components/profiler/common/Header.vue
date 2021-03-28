@@ -48,6 +48,9 @@ export default {
     background: $c-fff;
     padding: 0 $space-24;
     box-sizing: border-box;
+	box-shadow: 1px 3px 3px #eee;
+	position: relative;
+	z-index: 9;
     .right {
         height: 100%;
 		.notice {
