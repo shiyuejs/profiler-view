@@ -17,16 +17,16 @@ import Header from "@/components/profiler/common/Header";
 import Menu from "@/components/profiler/common/Menu";
 import Footer from "@/components/profiler/common/Footer";
 
+import { getApp } from "@/api/index";
+
 export default {
     data() {
-        return {
-            
-        };
+        return {};
     },
     computed: {
         ...mapState({
-			menuData: state => state.menuData
-		}),
+            menuData: (state) => state.menuData,
+        }),
     },
     components: {
         Header,
@@ -36,21 +36,22 @@ export default {
     created() {},
     mounted() {
         this.init();
-        this.getData();
+        this.getApp();
     },
     methods: {
         init() {},
 
         // 获取字典
-        async getData() {
+        async getApp() {
             try {
-                let res = await this.$http(
-                    "/v1/get_data",
-                    {},
-                    { tipError: false }
-                );
-                this.setValue("dictionary", this.mergeFilterField(res), true);
-            } catch (err) {}
+                const res = await getApp({
+					user: '1'
+				});
+                console.log('getApp', res);
+                // this.setValue("dictionary", this.mergeFilterField(res), true);
+            } catch (err) {
+				console.error('getApp xxxx', err)
+			}
         },
 
         /**

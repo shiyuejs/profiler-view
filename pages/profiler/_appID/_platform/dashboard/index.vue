@@ -62,11 +62,16 @@
 </template>
 
 <script>
+import { getApp } from "@/api/index";
 export default {
     name: "ProfilerDashboard",
     layout: "profiler",
     async asyncData(context) {
         // console.log(context);
+        const res = await getApp({
+            user: "11111",
+        });
+		console.log('asyncData', res)
     },
     data() {
         return {};

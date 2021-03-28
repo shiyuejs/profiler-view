@@ -65,14 +65,14 @@ module.exports = {
       src: "@/plugins/svgIcon",
       ssr: true
     },
-    {
-      src: "~plugins/axios/client/install",
-      ssr: false
-    },
-    {
-      src: "~plugins/axios/fetch",
-      ssr: false
-    }
+    // {
+    //   src: "~plugins/axios/client/install",
+    //   ssr: false
+    // },
+    // {
+    //   src: "~plugins/axios/fetch",
+    //   ssr: false
+    // }
   ],
 
   // axios: {
@@ -80,15 +80,15 @@ module.exports = {
   //   prefix: '/api',
   //   credentials: true,
   // },
-  // proxy: {
-  //   '/api': {
-  //     target: 'http://127.0.0.1:7304/api',
-  //     changeOrigin: true,
-  //     pathRewrite: {
-  //       '^/api': '/', //将 /api 替换掉
-  //     },
-  //   },
-  // },
+//   proxy: {
+//     '/api': {
+//       target: 'http://127.0.0.1:7304/api',
+//       changeOrigin: true,
+//       pathRewrite: {
+//         // '^/api': '/', //将 /api 替换掉
+//       },
+//     },
+//   },
 
   // 路由鉴权, 主要针对main路由
   router: {

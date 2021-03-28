@@ -1,6 +1,6 @@
 export default {
   api: {
-    development: "http://127.0.0.1:8002",
-    production: "http://127.0.0.1:8002"
+    development: "http://127.0.0.1:7304",
+    production: ""
   }
 };

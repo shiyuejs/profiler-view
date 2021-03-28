@@ -1,4 +1,3 @@
-import instance from "./instance";
+import { get } from "../plugins/axios/index";
 
-// 用户登录
-export const login = params => instance.get("/v1/users/login", { params });
+export const getApp = params => get("/demo/api/app", params);
