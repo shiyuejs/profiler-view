@@ -76,7 +76,6 @@ export default {
 @import "@/style/reset.scss";
 @import "@/style/common.scss";
 @import "@/style/config.scss";
-@import "@/style/sidebar.scss";
 .wrapper {
     width: 100%;
     min-height: 100%;

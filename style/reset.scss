@@ -1,3 +1,4 @@
+@import "./config.scss";
 body,
 ul,
 ol,
@@ -28,7 +29,7 @@ button {
 
 body {
     font-family: "Microsoft YaHei";
-    font-size: 12px;
+    font-size: $size-12;
     font-family: PingFang-Regular;
 }
 
@@ -74,7 +75,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 a {
-    color: #000;
+    color: $c-black;
     text-decoration: none;
 }
 
@@ -86,4 +87,8 @@ html,
 body,
 #app {
     height: 100%;
+}
+
+.nuxt-progress {
+	background: $c-green;
 }
